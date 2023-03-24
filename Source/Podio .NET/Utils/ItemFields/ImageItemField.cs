@@ -11,7 +11,7 @@ namespace PodioAPI.Utils.ItemFields
             get { return this.ValuesAs<FileAttachment>(); }
         }
 
-        public IEnumerable<int> FileIds
+        public IEnumerable<long> FileIds
         {
             set
             {

@@ -77,7 +77,7 @@ namespace PodioAPI.Services
         /// <param name="hook">todo: describe hook parameter on AddCommentToObject</param>
         /// <returns></returns>
         public async Task<int> AddCommentToObject(string type, int id, string text, string externalId = null,
-            List<int> fileIds = null, string embedUrl = null, int? embedId = null, bool alertInvite = false,
+            List<long> fileIds = null, string embedUrl = null, int? embedId = null, bool alertInvite = false,
             bool silent = false, bool hook = true)
         {
             CommentCreateUpdateRequest comment = new CommentCreateUpdateRequest()
@@ -131,7 +131,7 @@ namespace PodioAPI.Services
         ///     The id of an embedded link that has been created with the Add an embed operation in the Embed
         ///     area
         /// </param>
-        public async Task<dynamic>  UpdateComment(int commentId, string text, string externalId = null, List<int> fileIds = null,
+        public async Task<dynamic>  UpdateComment(int commentId, string text, string externalId = null, List<long> fileIds = null,
             string embedUrl = null, int? embedId = null)
         {
             var requestData = new CommentCreateUpdateRequest()

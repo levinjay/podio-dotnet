@@ -58,13 +58,13 @@ namespace PodioAPI.Services
         /// <param name="organizationId"></param>
         /// <param name="profileData"></param>
         /// <returns></returns>
-        public async Task<int?> CreateOrganizationAppStoreProfile(int organizationId, Contact profileData)
+        public async Task<long?> CreateOrganizationAppStoreProfile(int organizationId, Contact profileData)
         {
             string url = string.Format("/org/{0}/appstore", organizationId);
             dynamic response = await _podio.Post<dynamic>(url, profileData);
 
             if (response != null)
-                return (int) response["profile_id"];
+                return (long) response["profile_id"];
             else
                 return null;
         }

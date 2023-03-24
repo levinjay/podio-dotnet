@@ -22,7 +22,7 @@ namespace PodioAPI.Models.Request
         public List<string> Tags { get; set; }
 
         [JsonProperty(PropertyName = "file_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public List<int> FileIds { get; set; }
+        public List<long> FileIds { get; set; }
 
         [JsonProperty(PropertyName = "reminder", NullValueHandling = NullValueHandling.Ignore)]
         public Reminder Reminder { get; set; }

@@ -23,11 +23,11 @@ namespace PodioAPI.Services
         /// <param name="spaceId"></param>
         /// <param name="contact"></param>
         /// <returns>profile_id of the created contact</returns>
-        public async Task<int> CreateContact(int spaceId, Contact contact)
+        public async Task<long> CreateContact(int spaceId, Contact contact)
         {
             string url = string.Format("/contact/space/{0}/", spaceId);
             dynamic response = await  _podio.Post<dynamic>(url, contact);
-            return (int) response["profile_id"];
+            return (long) response["profile_id"];
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace PodioAPI.Services
         /// </summary>
         /// <param name="profileId"></param>
         /// <param name="contact"></param>
-        public async Task<dynamic> UpdateContact(int profileId, Contact contact)
+        public async Task<dynamic> UpdateContact(long profileId, Contact contact)
         {
             string url = string.Format("/contact/{0}", profileId);
             return await _podio.Put<dynamic>(url, contact);
@@ -335,7 +335,7 @@ namespace PodioAPI.Services
         /// </summary>
         /// <param name="profileId"></param>
         /// <returns></returns>
-        public async Task<StringResponse> GetvCard(int profileId)
+        public async Task<StringResponse> GetvCard(long profileId)
         {
             string url = string.Format("/contact/{0}/vcard", profileId);
             return await  _podio.Get<StringResponse>(url, returnAsString: true);
@@ -348,7 +348,7 @@ namespace PodioAPI.Services
         /// <param name="profileId"></param>
         /// <param name="key"></param>
         /// <param name="value">The new value for the profile field.</param>
-        public async Task<dynamic> UpdateContactField(int profileId, string key, string value)
+        public async Task<dynamic> UpdateContactField(long profileId, string key, string value)
         {
             string url = string.Format("/contact/{0}/{1}", profileId, key);
             dynamic requestData = new

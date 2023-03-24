@@ -5,7 +5,7 @@ namespace PodioAPI.Models
     public class Presence
     {
         [JsonProperty("ref_id")]
-        public int? RefId { get; set; }
+        public long? RefId { get; set; }
 
         [JsonProperty("ref_type")]
         public string RefType { get; set; }

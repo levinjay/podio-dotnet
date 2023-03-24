@@ -357,12 +357,12 @@ namespace PodioAPI.Services
         ///     generated
         /// </param>
         /// <returns>The id of the cloned item</returns>
-        public async Task<int> CloneItem(long itemId, bool silent = false)
+        public async Task<long> CloneItem(long itemId, bool silent = false)
         {
             string url = string.Format("/item/{0}/clone", itemId);
             url = Utility.PrepareUrlWithOptions(url, new CreateUpdateOptions(silent));
             dynamic tw = await _podio.Post<dynamic>(url);
-            return int.Parse(tw["item_id"].ToString());
+            return long.Parse(tw["item_id"].ToString());
         }
 
         /// <summary>

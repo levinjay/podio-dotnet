@@ -6,7 +6,7 @@ namespace PodioAPI.Models
     public class Profile
     {
         [JsonProperty("profile_id")]
-        public int ProfileId { get; set; }
+        public long ProfileId { get; set; }
 
         [JsonProperty("avatar")]
         public int? Avatar { get; set; }

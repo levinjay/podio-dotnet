@@ -217,7 +217,7 @@ namespace PodioAPI.Services
         /// <param name="scope">The scope the app should be shared with, either "public" or "private", defaults to "public"</param>
         /// <returns>The id of the newly created share</returns>
         public async Task<int> ShareApp(string refType, long refId, string name, string abstracts, string description,
-            string language, int[] categoryId, int[] fileId, int videoId, List<string> features, int childrenId,
+            string language, int[] categoryId, long[] fileId, int videoId, List<string> features, int childrenId,
             string scope = "public")
         {
             string url = "/app_store/";
@@ -264,7 +264,7 @@ namespace PodioAPI.Services
         /// <param name="fileId">The file ids to use as screenshots for the share</param>
         /// <param name="videoId">The youtube id of a introduction video, if any</param>
         public async Task<dynamic> UpdateShare(int shareId, string name, string abstracts, string description, string language,
-            int[] categoryId, int[] fileId, int? videoId = null)
+            int[] categoryId, long[] fileId, int? videoId = null)
         {
             string url = string.Format("/app_store/{0}", shareId);
             dynamic requestData = new

@@ -30,7 +30,7 @@ namespace PodioAPI.Models
         public string AppItemIdFormatted { get; set; }
 
         [JsonProperty("app_item_id")]
-        public int? AppItemId { get; set; }
+        public long? AppItemId { get; set; }
 
 
         [JsonProperty("created_by")]
@@ -114,7 +114,7 @@ namespace PodioAPI.Models
         public Grant Grant { get; set; }
 
         [JsonProperty("file_ids")]
-        public List<int> FileIds { get; set; }
+        public List<long> FileIds { get; set; }
 
         [JsonProperty("tasks")]
         public List<Task> Tasks { get; set; }

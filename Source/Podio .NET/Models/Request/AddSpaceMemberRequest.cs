@@ -21,7 +21,7 @@ namespace PodioAPI.Models.Request
         ///     The list of profile ids to invite to the space
         /// </summary>
         [JsonProperty("profiles", NullValueHandling = NullValueHandling.Ignore)]
-        public IEnumerable<int> Profiles { get; set; }
+        public IEnumerable<long> Profiles { get; set; }
 
         /// <summary>
         ///     The list of users ids to invite

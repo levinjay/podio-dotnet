@@ -10,7 +10,7 @@ namespace PodioAPI.Models
         public int? UserId { get; set; }
 
         [JsonProperty("profile_id", NullValueHandling = NullValueHandling.Ignore)]
-        public int? ProfileId { get; set; }
+        public long? ProfileId { get; set; }
 
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }

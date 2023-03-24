@@ -12,10 +12,10 @@ namespace PodioAPI.Models.Request
         public string Text { get; set; }
 
         [JsonProperty("file_ids", NullValueHandling = NullValueHandling.Ignore)]
-        public List<int> FileIds { get; set; }
+        public List<long> FileIds { get; set; }
 
         [JsonProperty("participants", NullValueHandling = NullValueHandling.Ignore)]
-        public List<int> Participants { get; set; }
+        public List<long> Participants { get; set; }
 
         [JsonProperty("embed_id", NullValueHandling = NullValueHandling.Ignore)]
         public int? EmbedId { get; set; }

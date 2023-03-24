@@ -17,7 +17,7 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <RootNamespace>Podio.Async</RootNamespace>
     <Authors>levinjay</Authors>
-    <Version>2.0.2</Version>
+    <Version>2.0.3</Version>
     <Title>Podio Async SDK</Title>
     <Description>This is a fork from - https://github.com/podio/podio-dotnet</Description>
     <Company>levinjay.com</Company>
