@@ -472,7 +472,7 @@ namespace PodioAPI.Services
         /// <param name="limit">The maximum number of results to return Default value: 13</param>
         /// <param name="notItemIds">If supplied the items with these ids will not be returned</param>
         /// <returns></returns>
-        public async Task<List<Item>> GetTopValuesByField(int fieldId, int limit = 13, int[] notItemIds = null)
+        public async Task<List<Item>> GetTopValuesByField(int fieldId, int limit = 13, long[] notItemIds = null)
         {
             string itemIdCSV = Utility.ArrayToCSV(notItemIds);
             var requestData = new Dictionary<string, string>()
@@ -723,7 +723,7 @@ namespace PodioAPI.Services
         /// </param>
         /// <param name="text">The text to search for. The search will be lower case, and with a wildcard in each end.</param>
         /// <returns></returns>
-        public async Task<List<Item>> FindReferenceableItems(int fieldId, int limit = 13, int[] notItemIds = null,
+        public async Task<List<Item>> FindReferenceableItems(int fieldId, int limit = 13, long[] notItemIds = null,
             string sort = null, string text = null)
         {
             string itemIdCSV = Utility.ArrayToCSV(notItemIds);
