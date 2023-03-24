@@ -22,7 +22,7 @@ namespace PodioAPI.Services
         /// <param name="externalURL">The url of endpoint.</param>
         /// <param name="type">The type of events to listen to, see the area for options.</param>
         /// <returns></returns>
-        public async Task<int> CreateHook(string refType, int refId, string externalURL, string type)
+        public async Task<int> CreateHook(string refType, long refId, string externalURL, string type)
         {
             string url = string.Format("/hook/{0}/{1}/", refType, refId);
             dynamic requestData = new
@@ -52,7 +52,7 @@ namespace PodioAPI.Services
         /// <param name="refType"></param>
         /// <param name="refId"></param>
         /// <returns></returns>
-        public async Task<List<Hook>> GetHooks(string refType, int refId)
+        public async Task<List<Hook>> GetHooks(string refType, long refId)
         {
             string url = string.Format("/hook/{0}/{1}/", refType, refId);
             return await _podio.Get<List<Hook>>(url);

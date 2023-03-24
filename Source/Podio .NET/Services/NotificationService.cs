@@ -58,7 +58,7 @@ namespace PodioAPI.Services
         /// </summary>
         /// <param name="refType"></param>
         /// <param name="refId"></param>
-        public async Task<dynamic> MarkNotificationsAsViewedByRef(string refType, int refId)
+        public async Task<dynamic> MarkNotificationsAsViewedByRef(string refType, long refId)
         {
             string url = string.Format("/notification/{0}/{1}/viewed", refType, refId);
              return await _podio.Post<dynamic>(url);

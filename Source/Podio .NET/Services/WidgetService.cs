@@ -23,7 +23,7 @@ namespace PodioAPI.Services
         /// <param name="title">The title of the widget</param>
         /// <param name="config">The configuration, depends on the types. See the area for details</param>
         /// <returns></returns>
-        public async Task<int> CreateWidget(string refType, int refId, string type, string title, dynamic config)
+        public async Task<int> CreateWidget(string refType, long refId, string type, string title, dynamic config)
         {
             string url = string.Format("/widget/{0}/{1}/", refType, refId);
             dynamic requestData = new
@@ -120,7 +120,7 @@ namespace PodioAPI.Services
         /// <param name="refType"></param>
         /// <param name="refId"></param>
         /// <returns></returns>
-        public async Task<List<Widget>> GetWidgets(string refType, int refId)
+        public async Task<List<Widget>> GetWidgets(string refType, long refId)
         {
             string url = string.Format("/widget/{0}/{1}/", refType, refId);
             return  await _podio.Get<List<Widget>>(url);

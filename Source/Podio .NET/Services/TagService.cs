@@ -22,7 +22,7 @@ namespace PodioAPI.Services
         /// <param name="refType"></param>
         /// <param name="refId"></param>
         /// <param name="tags"></param>
-        public async Task<dynamic> CreateTags(string refType, int refId, List<string> tags)
+        public async Task<dynamic> CreateTags(string refType, long refId, List<string> tags)
         {
             string url = string.Format("/tag/{0}/{1}/", refType, refId);
             return  await _podio.Post<dynamic>(url, tags);
@@ -169,7 +169,7 @@ namespace PodioAPI.Services
         /// <param name="refType"></param>
         /// <param name="refId"></param>
         /// <param name="text">The tag to search for</param>
-        public async Task<dynamic> RemoveTag(string refType, int refId, string text)
+        public async Task<dynamic> RemoveTag(string refType, long refId, string text)
         {
             string url = string.Format("/tag/{0}/{1}?text={2}", refType, refId, text);
             return await _podio.Delete<dynamic>(url);
@@ -183,7 +183,7 @@ namespace PodioAPI.Services
         /// <param name="refType"></param>
         /// <param name="refId"></param>
         /// <param name="tags"></param>
-        public async Task<dynamic> UpdateTags(string refType, int refId, List<string> tags)
+        public async Task<dynamic> UpdateTags(string refType, long refId, List<string> tags)
         {
             string url = string.Format("/tag/{0}/{1}/", refType, refId);
             return await _podio.Put<dynamic>(url, tags);

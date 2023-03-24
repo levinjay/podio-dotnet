@@ -32,7 +32,7 @@ namespace PodioAPI.Services
         /// <param name="refType"></param>
         /// <param name="refId"></param>
         /// <returns></returns>
-        public async Task<List<Flow>> GetFlows(string refType, int refId)
+        public async Task<List<Flow>> GetFlows(string refType, long refId)
         {
             string url = string.Format("/flow/{0}/{1}/", refType, refId);
             return await _podio.Get<List<Flow>>(url);
@@ -71,7 +71,7 @@ namespace PodioAPI.Services
         /// <param name="type">The type of the flow, currently only supports "item.create" and "item.update"</param>
         /// <param name="effects">The list of effects to add</param>
         /// <param name="config">The configuration for the cause of the flow</param>
-        public async Task<int> AddNewFlow(string refType, int refId, string name, string type, List<Effect> effects,
+        public async Task<int> AddNewFlow(string refType, long refId, string name, string type, List<Effect> effects,
             dynamic config = null)
         {
             string url = string.Format("/flow/{0}/{1}/", refType, refId);
@@ -115,7 +115,7 @@ namespace PodioAPI.Services
         /// <param name="cause">Details about the cause</param>
         /// <param name="effect">Details about the effect</param>
         /// <returns></returns>
-        public async Task<List<FlowAttribute>> GetPossibleAttributes(string refType, int refId, Cause cause, dynamic effect)
+        public async Task<List<FlowAttribute>> GetPossibleAttributes(string refType, long refId, Cause cause, dynamic effect)
         {
             string url = string.Format("/flow/{0}/{1}/attributes/", refType, refId);
             dynamic requestData = new

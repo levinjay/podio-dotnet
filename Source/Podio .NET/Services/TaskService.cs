@@ -73,7 +73,7 @@ namespace PodioAPI.Services
         /// <param name="refId"></param>
         /// <param name="limit"></param>
         /// <returns></returns>
-        public async Task<TaskSummary> GetTaskSummaryForReference(string refType, int refId, int limit = 4)
+        public async Task<TaskSummary> GetTaskSummaryForReference(string refType, long refId, int limit = 4)
         {
             string url = string.Format("/task/{0}/{1}/summary", refType, refId);
             var requestData = new Dictionary<string, string>()
@@ -107,7 +107,7 @@ namespace PodioAPI.Services
         /// <param name="refType"></param>
         /// <param name="refId"></param>
         /// <returns></returns>
-        public async Task<int> GetTaskCount(string refType, int refId)
+        public async Task<int> GetTaskCount(string refType, long refId)
         {
             string url = string.Format("/task/{0}/{1}/count", refType, refId);
             dynamic response = await _podio.Get<dynamic>(url);
@@ -438,7 +438,7 @@ namespace PodioAPI.Services
         /// <param name="refId"></param>
         /// <param name="hook"></param>
         /// <param name="silent"></param>
-        public async System.Threading.Tasks.Task UpdateTaskReference(int taskId, string refType, int refId, bool hook = true, bool silent = false)
+        public async System.Threading.Tasks.Task UpdateTaskReference(int taskId, string refType, long refId, bool hook = true, bool silent = false)
         {
             string url = string.Format("/task/{0}/ref", taskId);
             url = Utility.PrepareUrlWithOptions(url, new CreateUpdateOptions(silent, hook));

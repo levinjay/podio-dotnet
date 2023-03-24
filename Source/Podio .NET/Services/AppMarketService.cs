@@ -97,7 +97,7 @@ namespace PodioAPI.Services
         /// <param name="refType"></param>
         /// <param name="refId"></param>
         /// <returns></returns>
-        public async Task<List<AppMarketShare>> GetShareByReference(string refType, int refId)
+        public async Task<List<AppMarketShare>> GetShareByReference(string refType, long refId)
         {
             string url = string.Format("/app_store/{0}/{1}/", refType, refId);
             return await _podio.Get<List<AppMarketShare>>(url);
@@ -216,7 +216,7 @@ namespace PodioAPI.Services
         /// <param name="childrenId">The ids of the child shares that this share should include</param>
         /// <param name="scope">The scope the app should be shared with, either "public" or "private", defaults to "public"</param>
         /// <returns>The id of the newly created share</returns>
-        public async Task<int> ShareApp(string refType, int refId, string name, string abstracts, string description,
+        public async Task<int> ShareApp(string refType, long refId, string name, string abstracts, string description,
             string language, int[] categoryId, int[] fileId, int videoId, List<string> features, int childrenId,
             string scope = "public")
         {

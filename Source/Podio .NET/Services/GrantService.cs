@@ -101,7 +101,7 @@ namespace PodioAPI.Services
         /// <param name="action">The action required of the people, either "view", "comment" or "rate", or left out</param>
         /// <param name="message">Any special message to the users</param>
         /// <returns></returns>
-        public async Task<CreatedGrant> CreateGrant(string refType, int refId, List<Ref> people, string action,
+        public async Task<CreatedGrant> CreateGrant(string refType, long refId, List<Ref> people, string action,
             string message = null)
         {
             string url = string.Format("/grant/{0}/{1}", refType, refId);

@@ -12,7 +12,7 @@ namespace PodioAPI.Models
         public string refType { get; set; }
 
         [JsonProperty("ref_id")]
-        public int refId { get; set; }
+        public long refId { get; set; }
 
         [JsonProperty("action")]
         public string Action { get; set; }

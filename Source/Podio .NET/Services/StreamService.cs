@@ -122,7 +122,7 @@ namespace PodioAPI.Services
         /// <param name="refType"></param>
         /// <param name="refId"></param>
         /// <returns></returns>
-        public async Task<StreamObject> GetStreamObject(string refType, int refId)
+        public async Task<StreamObject> GetStreamObject(string refType, long refId)
         {
             string url = string.Format("/stream/{0}/{1}", refType, refId);
             return await _podio.Get<StreamObject>(url);
@@ -258,7 +258,7 @@ namespace PodioAPI.Services
         /// <param name="groupsEventTypes">The types of events to include in the returned activity groups.</param>
         /// <param name="groupsLimit">Default value: 2</param>
         /// <returns></returns>
-        public async Task<List<StreamObjectV3>> GetStreamObjectV3(string refType, int refId, string[] groupsEventTypes = null,
+        public async Task<List<StreamObjectV3>> GetStreamObjectV3(string refType, long refId, string[] groupsEventTypes = null,
             int groupsLimit = 2)
         {
             string url = string.Format("/stream/{0}/{1}/v3", refType, refId);

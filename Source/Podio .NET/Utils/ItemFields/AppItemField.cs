@@ -25,7 +25,7 @@ namespace PodioAPI.Utils.ItemFields
             }
         }
 
-        public int ItemId
+        public long ItemId
         {
             set
             {
