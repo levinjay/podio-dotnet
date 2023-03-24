@@ -20,6 +20,7 @@
     <Version>2.0.2</Version>
     <Title>Podio Async SDK</Title>
     <Description>This is a fork from - https://github.com/podio/podio-dotnet</Description>
+    <Company>levinjay.com</Company>
   </PropertyGroup>
 
   <ItemGroup>

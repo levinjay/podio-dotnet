@@ -105,7 +105,7 @@ namespace PodioAPI.Services
         /// <param name="appIds"> A comma-separated list of app ids from which the features should be extracted </param>
         /// <param name="includeSpace"></param>
         /// <returns></returns>
-        public async Task<List<string>> GetFeatures(int[] appIds, bool includeSpace = false)
+        public async Task<List<string>> GetFeatures(long[] appIds, bool includeSpace = false)
         {
             string appIdCSV = Utility.ArrayToCSV(appIds);
             string url = "/app/features/";
@@ -241,7 +241,7 @@ namespace PodioAPI.Services
         ///     Order by the name of the app. Default value: score
         /// </param>
         /// <returns></returns>
-        public async Task<List<Application>> GetAllUserApps(int[] excludeAppIds = null, int? referenceableInOrg = null,
+        public async Task<List<Application>> GetAllUserApps(long[] excludeAppIds = null, int? referenceableInOrg = null,
             string right = null, string text = null, bool excludeDemo = false, int limit = 4, string order = "score")
         {
             string appIdCSV = Utility.ArrayToCSV(excludeAppIds);

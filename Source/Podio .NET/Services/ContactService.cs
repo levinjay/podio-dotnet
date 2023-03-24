@@ -47,7 +47,7 @@ namespace PodioAPI.Services
         ///     <para>Podio API Reference: https://developers.podio.com/doc/contacts/delete-contact-s-60560 </para>
         /// </summary>
         /// <param name="profileIds"></param>
-        public async Task<dynamic> DeleteContacts(int[] profileIds)
+        public async Task<dynamic> DeleteContacts(long[] profileIds)
         {
             string profileIdCSV = Utility.ArrayToCSV(profileIds);
             string url = string.Format("/contact/{0}", profileIdCSV);
@@ -114,7 +114,7 @@ namespace PodioAPI.Services
         /// <param name="profileIds"></param>
         /// <param name="spaceId">If set the role and removable property will be set in the context of the given space.</param>
         /// <returns></returns>
-        public async Task<List<Contact>> GetContactsByProfileId(int[] profileIds, int? spaceId = null)
+        public async Task<List<Contact>> GetContactsByProfileId(long[] profileIds, int? spaceId = null)
         {
             string profileIdCSV = Utility.ArrayToCSV(profileIds);
             string url = string.Format("/contact/{0}/v2", profileIdCSV);

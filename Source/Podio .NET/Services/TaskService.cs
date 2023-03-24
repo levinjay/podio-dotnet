@@ -536,7 +536,7 @@ namespace PodioAPI.Services
         ///     spaces.
         /// </param>
         /// <returns></returns>
-        public async Task<TaskReport> GetTaskTotals(int[] spaceIds = null)
+        public async Task<TaskReport> GetTaskTotals(long[] spaceIds = null)
         {
             string url = "/task/total/";
             var requestData = new Dictionary<string, string>();
