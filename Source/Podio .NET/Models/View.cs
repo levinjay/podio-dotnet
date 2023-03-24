@@ -27,6 +27,9 @@ namespace PodioAPI.Models
         [JsonProperty("fields")]
         public JObject Fields { get; set; }
 
+        [JsonProperty("groupings")]
+        public JObject Groupings { get; set; }
+
         [JsonProperty("created_by")]
         public ByLine CreatedBy { get; set; }
 
